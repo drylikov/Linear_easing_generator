@@ -1,0 +1,31 @@
+.select {
+  overflow: clip;
+  position: relative;
+}
+
+.select-current {
+  pointer-events: none;
+  border: 1.5px solid var(--border-color);
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 11px;
+  padding: 0.2rem 0.7rem 0.2rem 0.8rem;
+  gap: 0.8rem;
+  align-items: center;
+
+  svg {
+    width: 100%;
+    stroke: var(--text-2);
+  }
+}
+
+.real-select {
+  color-scheme: dark light;
+  font-size: inherit;
+  opacity: 0;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  right: 0;
+}

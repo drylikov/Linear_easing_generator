@@ -1,0 +1,66 @@
+.range-component {
+  display: grid;
+
+  > * {
+    grid-area: 1/1;
+  }
+}
+
+.range-input {
+  opacity: 0;
+}
+
+.fake-range {
+  position: relative;
+  contain: layout;
+  --thumb-size: 20px;
+  height: var(--thumb-size);
+  --pos: 0.5;
+  pointer-events: none;
+}
+
+.active-line,
+.inactive-line {
+  height: 3px;
+  background: var(--blue-1);
+  border-radius: 100px;
+  position: absolute;
+  inset: auto 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(
+    (100% - var(--thumb-size)) * var(--pos) + (var(--thumb-size) / 2)
+  );
+}
+
+.inactive-line {
+  background: var(--surface-0);
+  margin-left: auto;
+  width: calc(
+    (100% - var(--thumb-size)) * (1 - var(--pos)) + (var(--thumb-size) / 2)
+  );
+}
+
+.track {
+  position: absolute;
+  inset: 0;
+  right: var(--thumb-size);
+}
+
+.control {
+  position: absolute;
+  left: calc(var(--pos) * 100%);
+  top: 0;
+
+  height: var(--thumb-size);
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  box-sizing: border-box;
+  background: var(--surface-1);
+  border: 1px solid var(--border-color);
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--surface-2);
+    border-color: var(--gray-7);
+  }
+}

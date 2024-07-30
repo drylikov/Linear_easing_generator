@@ -1,0 +1,46 @@
+.component {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+  background: var(--editor-background);
+}
+
+.editor-container {
+  display: grid;
+  grid-template-columns: 100%;
+  overflow: hidden;
+
+  & :global(.cm-editor) {
+    overflow: hidden;
+  }
+}
+
+.error {
+  background: var(--error-background);
+  border-top: 1px solid var(--error-border);
+  color: var(--error-text);
+  display: grid;
+  font-family: menlo, consolas, lucida console, courier new, dejavu sans mono,
+    monospace;
+  font-size: 13px;
+  grid-template-columns: auto 1fr;
+  padding: 5px 8px;
+  gap: 5px;
+
+  &::before {
+    content: url('images/error.svg');
+    --size: 15px;
+    width: var(--size);
+    height: var(--size);
+    margin-top: 1px;
+  }
+}
+
+.component :global(.cm-scroller) {
+  line-height: 1.5;
+  font-size: 0.8rem;
+
+  @media (min-width: 600px) {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,52 @@
+.graph-component {
+  background: var(--surface-3);
+  overflow: hidden;
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--surface-4);
+  }
+}
+
+.graph-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.full-path,
+.optimized-path {
+  fill: none;
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+}
+
+.full-path {
+  stroke: var(--accent-2);
+}
+
+.optimized-path {
+  stroke: var(--text-1);
+}
+
+.graph-axis {
+  fill: none;
+  stroke: var(--text-2);
+  stroke-width: 2px;
+}
+
+.graph-sublines {
+  fill: none;
+  stroke: var(--surface-4);
+  stroke-width: 1px;
+
+  @media (prefers-color-scheme: dark) {
+    stroke: var(--surface-3);
+    stroke-width: 2px;
+  }
+}
+
+.points-svg {
+  overflow: visible;
+}
